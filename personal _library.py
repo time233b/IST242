@@ -42,19 +42,20 @@ def main():
     library: list[str] = [] #library is initialized to be empty
     while True:
         show_menu()
-        choice = input("Choose an option: ").Strip()
+        choice = input("Choose an option: ").strip()
         if choice == "1":
-            add_book()
+            add_book(library)
         elif choice == "2":
-            remove_book()
+            remove_book(library)
         elif choice == "3":
-            list_book()
+            list_book(library)
         elif choice == "4":
-            search_book()
+            search_book(library)
         elif choice == "5":
             print("Goodbye!")
             break
         else:
             print("Invalid number.Please try again")
-
+if __name__ == "__main__":
+    main()
      
