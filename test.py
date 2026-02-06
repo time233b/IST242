@@ -38,11 +38,15 @@ class TestPersonallibrary(unittest.TestCase):
             output = out.getvalue()
         self.assertIn("Dune", output)
         self.assertIn("Dune Messiah", output)
-      
 
-    
+    #test case for remove book function
+    def test_remove_book_for_item(self):
+        library = ["Dune","Dune Messiah"]
+        with patch("builtins.input",return_value="Dune"):
+            remove_book(library)
+        self.assertEqual(library,["Dune Messiah"])
+
 
 #call the test class main method
-
 if __name__ == "__main__":
     unittest.main()
